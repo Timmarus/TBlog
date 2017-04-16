@@ -22,10 +22,11 @@ from comments.views import comment_box
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+import debug_toolbar
 
 urlpatterns = [
     url(r'^$', views_index),
+    url(r'^__debug__/', include(debug_toolbar.urls)),
     url(r'^account/', include('account.urls')),
     url(r'^comment/', comment_box, name="comment_box"),
     url(r'^admin/', admin.site.urls),

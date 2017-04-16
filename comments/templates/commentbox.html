@@ -1,0 +1,23 @@
+{#extends {'post.html'#}
+{% extends 'templates/base.html' %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+
+{% block content %}
+<form method="POST" action="" class="form col-sm-4">
+    <h4>Post a comment</h4>
+    {% csrf_token %}
+    {% for key in form %}
+    <div class="form-group">
+        <label for="id_{{ key.name }}">{{ key.name }}</label>
+        {% if form.text == key %}
+        {% render_field key placeholder="(optional)..." class="form-control" %}
+        {% else %}
+        {% render_field key placeholder="Comment..." class="form-control" %}
+        {% endif %}
+        {{ key.errors }}
+    </div>
+    {% endfor %}
+    <input type="button" class="btn btn-submit" name="Submit" value="Submit"/>
+</form>
+{% endblock %}

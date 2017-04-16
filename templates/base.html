@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>TimmBlog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}startbootstrap-freelancer-4-dev\css\freelancer.css">
+        <link rel="stylesheet" href="{% static 'startbootstrap-freelancer-4-dev/css/freelancer.min.css' %}">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">TimmBlog</a></h1>
+        </div>
+
+        <div class="content container">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
